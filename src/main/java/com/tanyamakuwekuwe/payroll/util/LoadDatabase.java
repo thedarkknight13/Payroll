@@ -1,5 +1,7 @@
-package com.tanyamakuwekuwe.payroll;
+package com.tanyamakuwekuwe.payroll.util;
 
+import com.tanyamakuwekuwe.payroll.models.Employee;
+import com.tanyamakuwekuwe.payroll.repositories.EmployeeRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;

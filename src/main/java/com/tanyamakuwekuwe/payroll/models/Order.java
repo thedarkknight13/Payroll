@@ -1,5 +1,6 @@
-package com.tanyamakuwekuwe.payroll;
+package com.tanyamakuwekuwe.payroll.models;
 
+import com.tanyamakuwekuwe.payroll.util.Status;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;

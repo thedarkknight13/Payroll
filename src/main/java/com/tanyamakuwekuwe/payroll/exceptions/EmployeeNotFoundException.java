@@ -1,7 +1,7 @@
-package com.tanyamakuwekuwe.payroll;
+package com.tanyamakuwekuwe.payroll.exceptions;
 
 public class EmployeeNotFoundException extends RuntimeException{
-    EmployeeNotFoundException(Long id){
+    public EmployeeNotFoundException(Long id){
         super("Could not find employee " + id);
     }
 }

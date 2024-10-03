@@ -1,5 +1,7 @@
-package com.tanyamakuwekuwe.payroll;
+package com.tanyamakuwekuwe.payroll.util;
 
+import com.tanyamakuwekuwe.payroll.controllers.EmployeeController;
+import com.tanyamakuwekuwe.payroll.models.Employee;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.server.RepresentationModelAssembler;
 import org.springframework.stereotype.Component;

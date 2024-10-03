@@ -1,4 +1,4 @@
-package com.tanyamakuwekuwe.payroll;
+package com.tanyamakuwekuwe.payroll.exceptions;
 
 public class OrderNotFoundException extends RuntimeException {
     OrderNotFoundException(Long id){

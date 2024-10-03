@@ -1,5 +1,9 @@
-package com.tanyamakuwekuwe.payroll;
+package com.tanyamakuwekuwe.payroll.controllers;
 
+import com.tanyamakuwekuwe.payroll.util.EmployeeModelAssembler;
+import com.tanyamakuwekuwe.payroll.exceptions.EmployeeNotFoundException;
+import com.tanyamakuwekuwe.payroll.models.Employee;
+import com.tanyamakuwekuwe.payroll.repositories.EmployeeRepository;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.IanaLinkRelations;
@@ -15,7 +19,7 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 public class EmployeeController {
 
     private final EmployeeRepository repository;
-    private  final  EmployeeModelAssembler assembler;
+    private  final EmployeeModelAssembler assembler;
 
     public EmployeeController(EmployeeRepository repository, EmployeeModelAssembler assembler) {
         this.repository = repository;
@@ -25,7 +29,7 @@ public class EmployeeController {
     // Aggregate root
     // tag::get-aggregate-root[]
     @GetMapping("/employees")
-    CollectionModel<EntityModel<Employee>> all(){
+    public CollectionModel<EntityModel<Employee>> all(){
         List<EntityModel<Employee>> employees = repository.findAll()
                 .stream()
                 .map(assembler::toModel)
@@ -46,7 +50,7 @@ public class EmployeeController {
     // Single item
 
     @GetMapping("/employees/{id}")
-    EntityModel< Employee> one(@PathVariable Long id){
+    public EntityModel< Employee> one(@PathVariable Long id){
         Employee employee = repository.findById(id).orElseThrow(() -> new EmployeeNotFoundException(id));
         return assembler.toModel(employee);
     }
