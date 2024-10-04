@@ -1,17 +1,16 @@
 package com.tanyamakuwekuwe.payroll.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.util.Objects;
 
 
 // new employee
 @Entity
+@Table(name = "employee")
 public class Employee {
     private @Id
-    @GeneratedValue Long id;
+    @GeneratedValue(strategy = GenerationType.AUTO) Long id;
     private String firstName;
     private String lastName;
     private String role;
